@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.server.TcpServer">
+   <children>
+      <TextArea fx:id="textArea" editable="false" layoutX="125.0" layoutY="24.0" prefHeight="140.0" prefWidth="356.0" promptText="WELCOME. Please enter the configuration values for the server. \n ALL VALUES CAN BE EMPTY! \n Port will default to 3000 if empty, IP address will default to localhost, max pending will be 50. If you use any custom settings, you MUST verify config first" text="WELCOME. Please enter the configuration values for server. &#10;ALL VALUES CAN BE EMPTY! &#10;Port will default to 3000 if empty&#10;IP address will default to localhost&#10;max pending connections will be 50.&#10;If you use any custom settings, you MUST verify config first" wrapText="true" />
+      <VBox alignment="CENTER" layoutX="341.0" layoutY="179.0" prefHeight="184.0" prefWidth="137.0" spacing="28.0">
+         <children>
+            <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#verifySettings" text="Verify Config" />
+            <Button mnemonicParsing="false" onAction="#connectFakeClient" text="Connect client" />
+            <Button mnemonicParsing="false" onAction="#cleanup" prefHeight="22.0" prefWidth="132.0" text="Close all connections" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="125.0" layoutY="179.0" prefHeight="166.0" prefWidth="187.0" spacing="5.0">
+         <children>
+            <Label text="Port #" />
+            <TextField fx:id="portTextField" />
+            <Label text="IP Address" />
+            <TextField fx:id="ipTextField" />
+            <Label text="Max pending connections" />
+            <TextField fx:id="maxConnectionsField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="149.0" />
+         </children>
+      </VBox>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="125.0" layoutY="341.0" prefHeight="122.0" prefWidth="356.0" vgap="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#initializeServer" prefHeight="25.0" prefWidth="356.0" text="Initialize server" />
+            <TextField fx:id="toStrField" editable="false" prefHeight="25.0" prefWidth="356.0" />
+         </children>
+      </FlowPane>
+   </children>
+</AnchorPane>
